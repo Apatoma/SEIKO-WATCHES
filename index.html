@@ -1,92 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seiko Mod Builder - Customize Your Watch</title>
-    <meta name="description" content="Create your custom Seiko watch with the best modding parts. Choose dials, hands, bezels and more.">
-    <link rel="stylesheet" href="./main.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Seiko Mod Builder - Customize Your Watch</title>
+	<meta name="description" content="Create your custom Seiko watch with the best modding parts. Choose dials, hands, bezels and more.">
+	<link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">Seiko Mod Builder</div>
-            <div class="header-right">
-                <button class="language-toggle" id="languageToggle">🇪🇸 ES</button>
-                <div class="cart-indicator" id="cartIndicator">
-                    <span id="cartText">Cart</span>
-                    <span class="cart-count" id="cartCount">0</span>
-                </div>
-            </div>
-        </div>
-    </header>
+	<header>
+		<div class="header-content">
+			<div class="logo">Seiko Mod Builder</div>
+			<div class="header-right">
+				<button class="language-toggle" id="languageToggle">🇪🇸 ES</button>
+				<div class="cart-indicator" id="cartIndicator" role="button" aria-haspopup="true" aria-expanded="false">
+					<span id="cartText">Cart</span>
+					<span class="cart-count" id="cartCount">0</span>
+				</div>
+			</div>
+		</div>
+	</header>
 
-    <main>
-        <div class="container">
-            <section class="hero">
-                <h1 id="heroTitle">Customize Your Seiko</h1>
-                <p id="heroSubtitle">Discover the best modding parts to create your dream Seiko watch. Premium quality, fast shipping.</p>
-            </section>
+	<main>
+		<div class="container">
+			<section class="hero">
+				<h1 id="heroTitle">Customize Your Seiko</h1>
+				<p id="heroSubtitle">Discover the best modding parts to create your dream Seiko watch. Premium quality, fast shipping.</p>
+			</section>
 
-            <section class="filters">
-                <button class="filter-btn active" data-category="all" aria-label="View all categories" id="filterAll">
-                    All
-                </button>
-                <button class="filter-btn" data-category="dial" aria-label="View only dials" id="filterDial">
-                    Dials
-                </button>
-                <button class="filter-btn" data-category="hands" aria-label="View only hands" id="filterHands">
-                    Hands
-                </button>
-                <button class="filter-btn" data-category="bezel" aria-label="View only bezels" id="filterBezel">
-                    Bezels
-                </button>
-                <button class="filter-btn" data-category="case" aria-label="View only cases" id="filterCase">
-                    Cases
-                </button>
-                <button class="filter-btn" data-category="strap" aria-label="View only straps" id="filterStrap">
-                    Straps
-                </button>
-                <button class="filter-btn" data-category="crystal" aria-label="View only crystals" id="filterCrystal">
-                    Crystals
-                </button>
-                <button class="filter-btn" data-category="movement" aria-label="View only movements" id="filterMovement">
-                    Movements
-                </button>
-            </section>
+			<section class="filters">
+				<button class="filter-btn active" data-category="all" aria-label="View all categories" id="filterAll">
+					All
+				</button>
+				<button class="filter-btn" data-category="dial" aria-label="View only dials" id="filterDial">Dials</button>
+				<button class="filter-btn" data-category="hands" aria-label="View only hands" id="filterHands">Hands</button>
+				<button class="filter-btn" data-category="bezel" aria-label="View only bezels" id="filterBezel">Bezels</button>
+				<button class="filter-btn" data-category="case" aria-label="View only cases" id="filterCase">Cases</button>
+				<button class="filter-btn" data-category="strap" aria-label="View only straps" id="filterStrap">Straps</button>
+				<button class="filter-btn" data-category="crystal" aria-label="View only crystals" id="filterCrystal">Crystals</button>
+				<button class="filter-btn" data-category="movement" aria-label="View only movements" id="filterMovement">Movements</button>
+			</section>
 
-            <section class="products-grid" id="productsGrid">
-                <!-- Los productos se generarán dinámicamente -->
-            </section>
-        </div>
-    </main>
+			<section class="products-grid" id="productsGrid">
+				<!-- Los productos se generarán dinámicamente -->
+			</section>
+		</div>
+	</main>
 
-    <div class="floating-cart" id="floatingCart">
-        <div class="cart-header">
-            <div class="cart-title" id="cartTitle">Your Selection</div>
-        </div>
-        <div class="cart-summary" id="cartSummary">
-            0 items - $0.00
-        </div>
-        <button class="checkout-btn" id="checkoutBtn" aria-label="Buy selection on AliExpress">
-            Buy on AliExpress
-        </button>
-    </div>
+	<div class="floating-cart" id="floatingCart" aria-hidden="true">
+		<div class="cart-header">
+			<div class="cart-title" id="cartTitle">Your Selection</div>
+		</div>
+		<div class="cart-summary" id="cartSummary">0 items - $0.00</div>
+		<button class="checkout-btn" id="checkoutBtn" aria-label="Buy selection on AliExpress">Buy on AliExpress</button>
+	</div>
 
-    <!-- Modal de imagen -->
-    <div class="image-modal" id="imageModal">
-        <div class="modal-content">
-            <img class="modal-image" id="modalImage" src="" alt="">
-            <button class="modal-close" id="modalClose">×</button>
-        </div>
-    </div>
+	<!-- Modal de imagen -->
+	<div class="image-modal" id="imageModal" aria-hidden="true">
+		<div class="modal-content">
+			<img class="modal-image" id="modalImage" src="" alt="">
+			<button class="modal-close" id="modalClose">×</button>
+		</div>
+	</div>
 
-    <footer>
-        <div class="container">
-            <p id="footerText">&copy; 2025 Seiko Mod Builder. Made with ❤️ for watch enthusiasts.</p>
-        </div>
-    </footer>
+	<footer>
+		<div class="container">
+			<p id="footerText">&copy; 2025 Seiko Mod Builder. Made with ❤️ for watch enthusiasts.</p>
+		</div>
+	</footer>
 
-    <script src="./main.js"></script>
+	<script defer src="./js/main.js"></script>
 </body>
 </html>
